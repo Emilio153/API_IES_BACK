@@ -1,15 +1,15 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-d7sd2i3bc2fs73ec1lvg-a.ohio-postgres.render.com:5432/instituto_6cqe
-    username: instituto_6cqe_user
-    password: T7AWFYUV5Dt2svRZ2VbvuPuG1mkg5MDG
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://dpg-d7sd2i3bc2fs73ec1lvg-a:5432/instituto_6cqe}
+    username: ${SPRING_DATASOURCE_USERNAME:instituto_6cqe_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:T7AWFYUV5Dt2svRZ2VbvuPuG1mkg5MDG}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update   # create | update | validate | none
-    show-sql: true
+      ddl-auto: update
+    show-sql: false # En producción es mejor false para no saturar los logs
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false
     open-in-view: false

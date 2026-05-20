@@ -7,9 +7,9 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update   # create | update | validate | none
-    show-sql: false
+      ddl-auto: update
+    show-sql: true  # Es útil tenerlo en true en local para ver las consultas
     properties:
       hibernate:
-        format_sql: false
+        format_sql: true
     open-in-view: false
